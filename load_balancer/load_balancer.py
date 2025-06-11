@@ -51,17 +51,3 @@ class ConsistentHashMap:
             slot = (slot + 1) % TOTAL_SLOTS  # Linear probing
         return slot
 
-# Example usage:
-if __name__ == "__main__":
-    ch = ConsistentHashMap()
-    ch.add_server(1)
-    ch.add_server(2)
-    ch.add_server(3)
-
-    for req_id in [101, 202, 303, 404, 505]:
-        ch.route_request(req_id)
-
-    ch.remove_server(2)
-
-    for req_id in [101, 202, 303, 404, 505]:
-        ch.route_request(req_id)

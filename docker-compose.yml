@@ -1,0 +1,45 @@
+version: '3'
+
+networks:
+  net1:
+
+services:
+
+  load_balancer:
+    build: ./load_balancer
+    container_name: load_balancer
+    ports:
+      - "6000:6000"
+    privileged: true
+    networks:
+      - net1
+
+  server1:
+    build: ./server
+    container_name: server_1
+    environment:
+      - SERVER_ID=1
+    ports:
+      - "5001:5000"
+    networks:
+      - net1
+
+  server2:
+    build: ./server
+    container_name: server_2
+    environment:
+      - SERVER_ID=2
+    ports:
+      - "5002:5000"
+    networks:
+      - net1
+
+  server3:
+    build: ./server
+    container_name: server_3
+    environment:
+      - SERVER_ID=3
+    ports:
+      - "5003:5000"
+    networks:
+      - net1
