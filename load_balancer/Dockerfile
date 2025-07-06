@@ -7,7 +7,7 @@ COPY load_balancer.py .
 
 RUN apt-get update && apt-get install -y curl
 
-RUN pip install flask
+RUN pip install flask matplotlib
 
 EXPOSE 6000
 

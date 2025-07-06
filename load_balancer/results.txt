@@ -1,0 +1,34 @@
+Server 1 added.
+Server 2 added.
+Server 3 added.
+Request 1 routed to Server 1
+Request 2 routed to Server 2
+Request 3 routed to Server 3
+Request 4 routed to Server 1
+Request 5 routed to Server 2
+Request 6 routed to Server 3
+Request 7 routed to Server 1
+Request 8 routed to Server 2
+Request 9 routed to Server 3
+Request 10 routed to Server 1
+Request 11 routed to Server 2
+Request 12 routed to Server 3
+Request 13 routed to Server 1
+Request 14 routed to Server 2
+Request 15 routed to Server 3
+Request 16 routed to Server 1
+Request 17 routed to Server 2
+Request 18 routed to Server 3
+Request 19 routed to Server 1
+Request 20 routed to Server 2
+Request 21 routed to Server 3
+Request 22 routed to Server 1
+Request 23 routed to Server 2
+Request 24 routed to Server 3
+Request 25 routed to Server 1
+Request 26 routed to Server 2
+Request 27 routed to Server 3
+Request 28 routed to Server 1
+Request 29 routed to Server 2
+Request 30 routed to Server 3
+Graph saved as 'server_load_distribution.png'

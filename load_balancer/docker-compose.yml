@@ -1,0 +1,74 @@
+version: "3.9"
+services:
+  load-balancer:
+    build:
+      context: .
+      dockerfile: Dockerfile.load_balancer
+    image: load_balancer_image
+    container_name: load-balancer
+    ports:
+      - "5000:5000"
+    privileged: true
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    environment:
+      - DOCKER_HOST=unix:///var/run/docker.sock
+    networks:
+      - load_balancer_network
+    depends_on:
+      - server1
+      - server2
+      - server3
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+  server1:
+    build:
+      context: .
+      dockerfile: Dockerfile.server
+    image: server_image
+    container_name: server1
+    environment:
+      - SERVER_ID=server1
+    networks:
+      - load_balancer_network
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+  server2:
+    build:
+      context: .
+      dockerfile: Dockerfile.server
+    image: server_image
+    container_name: server2
+    environment:
+      - SERVER_ID=server2
+    networks:
+      - load_balancer_network
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+  server3:
+    build:
+      context: .
+      dockerfile: Dockerfile.server
+    image: server_image
+    container_name: server3
+    environment:
+      - SERVER_ID=server3
+    networks:
+      - load_balancer_network
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+networks:
+  load_balancer_network:
+    driver: bridge
