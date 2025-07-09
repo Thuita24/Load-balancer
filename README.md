@@ -9,34 +9,7 @@
 •	Performance experiments (Task A1–A4) via simulation scripts
 
 # Project Structure
-├── .gitignore
-├── README.md
-├── TASK_1
-│   ├── Dockerfile
-│   ├── requirements.txt
-│   └── server.py
-├── TASK_2
-│   ├── Dockerfile
-│   ├── consistent_hash.py
-│   ├── docker-compose.yml
-│   ├── loadbalancer.py
-│   └── requirements.txt
-├── TASK_3
-│   ├── Dockerfile
-│   ├── app.py
-│   ├── consistent_hash.py
-│   ├── docker-compose.yml
-│   └── requirements.txt
-├── TASK_4
-│   ├── analysis.ipynb
-│   ├── analysis_one.py
-│   ├── analysis_two.py
-│   ├── consistent_hash.py
-│   └── figures
-│       ├── analysis_one.png
-│       └── analysis_two.png
-└── requirements.txt
-
+```text Load-balancer/ ├── Dockerfile (Load balancer) ├── app.py (Load balancer Flask application) ├── hashing.py (ConsistentHashRing class logic) ├── simulate_task4_a*.py (Performance simulation scripts) ├── server/ (Backend Flask server) │ ├── Dockerfile │ └── server.py ├── docker-compose.yml └── README.md ```
 # Prerequisites
 •	Python 3.9+
 •	Docker & Docker Compose
