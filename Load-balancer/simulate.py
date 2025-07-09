@@ -1,13 +1,12 @@
 from hashing import ConsistentHashRing
 import matplotlib.pyplot as plt
 
-# Initialize the consistent hash ring
+
 ring = ConsistentHashRing(num_servers=3, slots=512, virtual_nodes=9)
 
 # Track request counts
 request_counts = {}
 
-# Simulate requests
 for request_id in range(1, 31):
     server = ring.get_server_for_request(request_id)
     if server:
