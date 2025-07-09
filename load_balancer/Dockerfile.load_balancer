@@ -1,8 +1,0 @@
-FROM python:3.8-slim
-WORKDIR /app
-COPY requirements.txt .
-RUN pip install --no-cache-dir -r requirements.txt
-RUN apt-get update && apt-get install -y gcc python3-dev
-RUN groupadd -r docker && usermod -aG docker $(whoami)  # Adjust for container user
-COPY load_balancer.py .
-CMD ["python", "load_balancer.py"]
