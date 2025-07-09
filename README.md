@@ -1,4 +1,4 @@
-# Consistent Hashing-Based Load Balancer **
+# Consistent Hashing-Based Load Balancer 
 
 # Features
 •	Load balancing using Consistent Hashing
