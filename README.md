@@ -1,7 +1,6 @@
-Consistent Hashing-Based Load Balancer
+**# Consistent Hashing-Based Load Balancer **
 
-
-Features
+# Features
 •	Load balancing using Consistent Hashing
 •	Server health monitoring via heartbeat checks
 •	Dynamic scaling (add/remove servers via API)
