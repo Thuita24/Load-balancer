@@ -9,12 +9,12 @@
 •	Performance experiments (Task A1–A4) via simulation scripts
 
 # Project Structure
-[ ] •	Load-balancer/
-[ ] •	├── Dockerfile (Load balancer)
-•	├── app.py (Load balancer Flask application)
-•	├── hashing.py (ConsistentHashRing class logic)
-•	├── simulate_task4_a*.py (Performance simulation scripts)
-•	├── server/ (Backend Flask server)
+[ ] Load-balancer/
+[ ]├── Dockerfile (Load balancer)
+[ ]├── app.py (Load balancer Flask application)
+[ ]├── hashing.py (ConsistentHashRing class logic)
+[ ]├── simulate_task4_a*.py (Performance simulation scripts)
+[ ]├── server/ (Backend Flask server)
 •	│   ├── Dockerfile
 •	│   └── server.py
 •	├── docker-compose.yml
