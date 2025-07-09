@@ -11,7 +11,7 @@ ring = ConsistentHashRing(num_servers=3, slots=512, virtual_nodes=9)
 @app.route('/request/<int:request_id>', methods=['GET'])
 def route_request(request_id):
     server = ring.get_server_for_request(request_id)
-    #get message
+    
     if server:
         return jsonify({
             "message": f"Request ID {request_id} routed to {server}",
@@ -46,7 +46,7 @@ def add_servers():
     new_servers = hostnames[:n] if hostnames else [f"server{random.randint(100, 999)}:5000" for _ in range(n)]
     servers.extend(new_servers)
 
-    # Update hash ring with new servers
+
     hash_ring = ConsistentHashRing(servers, HSLOTS, K)
     return jsonify({"message": {"N": len(servers), "replicas": servers, "status": "successful"}}), 200
 
@@ -70,7 +70,7 @@ def remove_servers():
         servers.remove(random.choice(servers))
         n -= 1
 
-    # Update hash ring with servers
+    
     new_hash_ring = ConsistentHashRing(servers, HSLOTS, K)
     global hash_ring
     hash_ring = new_hash_ring  # Replace the old ring
