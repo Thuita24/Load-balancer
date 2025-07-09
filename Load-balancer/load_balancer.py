@@ -11,6 +11,7 @@ ring = ConsistentHashRing(num_servers=3, slots=512, virtual_nodes=9)
 @app.route('/request/<int:request_id>', methods=['GET'])
 def route_request(request_id):
     server = ring.get_server_for_request(request_id)
+    #get message
     if server:
         return jsonify({
             "message": f"Request ID {request_id} routed to {server}",
